@@ -1,4 +1,3 @@
-version: '3.9'
 services:
   db:
     image: mysql:8.0
@@ -6,9 +5,9 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE:      workflow_db   
-      MYSQL_USER:          workflow_user
-      MYSQL_PASSWORD:      workflow_pass
+      MYSQL_DATABASE: workflow_db
+      MYSQL_USER: workflow_user
+      MYSQL_PASSWORD: workflow_pass
     ports:
       - "3307:3306"
     volumes:
@@ -18,8 +17,9 @@ services:
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
-      timeout:  5s
-      retries:  5
+      timeout: 5s
+      retries: 5
+ 
   backend:
     build:
       context: ./workflow-approval
@@ -29,19 +29,23 @@ services:
     ports:
       - "8080:8080"
     environment:
-      # ✅ "db" = MySQL container name — not localhost
-      SPRING_DATASOURCE_URL:         jdbc:mysql://db:3306/dailytask_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-      SPRING_DATASOURCE_USERNAME:    workflow_user
-      SPRING_DATASOURCE_PASSWORD:    workflow_pass
-      JWT_SECRET:                    OWVlNGM4ZTQtNTA2ZS00YzM4LWJlNzItYzg2YzZhZjBjOGI4YTQ1NGQtNTM0ZC00
-      JWT_EXPIRATION:                86400000
-      MAIL_USERNAME:                 snehaveerakumar2004@gmail.com
-      MAIL_PASSWORD:                 dkyvjmenlqaabzda
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/workflow_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: workflow_user
+      SPRING_DATASOURCE_PASSWORD: workflow_pass
+      APP_JWT_SECRET: OWVlNGM4ZTQtNTA2ZS00YzM4LWJlNzItYzg2YzZhZjBjOGI4YTQ1NGQtNTM0ZC00
+      APP_JWT_EXPIRATION: 86400000
+      APP_MAIL_ENABLED: "false"
+      SPRING_MAIL_HOST: smtp.gmail.com
+      SPRING_MAIL_PORT: 587
+      SPRING_MAIL_USERNAME: snehaveerakumar2004@gmail.com
+      SPRING_MAIL_PASSWORD: dkyvjmenlqaabzda
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
     depends_on:
       db:
         condition: service_healthy
     networks:
       - lats-network
+ 
   frontend:
     build:
       context: ./workflow-simple
@@ -49,13 +53,15 @@ services:
     container_name: workflow-frontend
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "3000:80"
     depends_on:
       - backend
     networks:
       - lats-network
+ 
 volumes:
   mysql_data:
+ 
 networks:
   lats-network:
     driver: bridge
