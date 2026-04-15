@@ -1,0 +1,6 @@
+projectKey=Office_WorkFlow_Approval_System
+serverUrl=http://localhost:9000
+serverVersion=9.9.0.65466
+dashboardUrl=http://localhost:9000/dashboard?id=Office_WorkFlow_Approval_System
+ceTaskId=AZ2Q6gJTvL_zb1mXTb1z
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AZ2Q6gJTvL_zb1mXTb1z

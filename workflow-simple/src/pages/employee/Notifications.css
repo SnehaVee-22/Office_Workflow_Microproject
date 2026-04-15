@@ -1,0 +1,11 @@
+.notif-title { font-size:17px; font-weight:bold; color:#27235c; margin-bottom:16px; padding:10px 14px; background:white; border-left:5px solid #97247e; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(39,35,92,0.08); }
+.notif-wrap { margin-top:12px; overflow-x:auto; border-radius:4px; box-shadow:0 1px 4px rgba(39,35,92,0.1); }
+.notif-table { width:100%; border-collapse:collapse; background:white; min-width:500px; }
+.notif-table th { background:#27235c; color:white; padding:10px 12px; text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; }
+.notif-table td { padding:9px 12px; border-bottom:1px solid #ecedf4; font-size:13px; vertical-align:middle; }
+.notif-table tr:last-child td { border-bottom:none; }
+.notif-table tr.notif-unread td { font-weight:bold; background:#faf5ff; }
+.notif-table tr:hover td { background:#f3f0f9; }
+.notif-unread-text { color:#97247e; font-weight:bold; }
+.notif-read-text { color:#888; }
+.notif-empty { background:white; border-radius:4px; border-top:3px solid #27235c; padding:30px 18px; text-align:center; color:#888; font-size:14px; box-shadow:0 1px 4px rgba(39,35,92,0.08); margin-top:12px; }

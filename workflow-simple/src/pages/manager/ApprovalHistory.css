@@ -1,0 +1,25 @@
+.ah-title { font-size:17px; font-weight:bold; color:#27235c; margin-bottom:16px; padding:10px 14px; background:white; border-left:5px solid #97247e; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(39,35,92,0.08); }
+.ah-filter-card { background:white; border-radius:4px; border-top:3px solid #27235c; padding:16px 18px; margin:12px 0; box-shadow:0 1px 4px rgba(39,35,92,0.08); }
+.ah-filter-card h3 { font-size:14px; color:#27235c; margin-bottom:12px; padding-bottom:8px; border-bottom:2px solid #ecedf4; }
+.ah-filter-row { display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end; }
+.ah-filter-group { display:flex; flex-direction:column; gap:5px; flex:1; min-width:140px; }
+.ah-filter-group label { font-size:11px; font-weight:bold; color:#27235c; text-transform:uppercase; letter-spacing:0.4px; }
+.ah-filter-group input,
+.ah-filter-group select { padding:8px 10px; border:1px solid #ccc; border-radius:3px; font-size:13px; font-family:Arial,sans-serif; outline:none; background:#fafafa; transition:border-color 0.2s; }
+.ah-filter-group input:focus,
+.ah-filter-group select:focus { border-color:#27235c; background:white; }
+.ah-summary { font-size:13px; color:#555; margin-bottom:10px; padding:8px 12px; background:white; border-radius:3px; box-shadow:0 1px 3px rgba(39,35,92,0.06); }
+.ah-summary strong { color:#27235c; margin-right:14px; }
+.ah-alert { padding:9px 12px; margin-bottom:10px; font-size:13px; border-left:4px solid #27235c; background:#ede7f6; color:#27235c; border-radius:0 3px 3px 0; }
+.ah-table-wrap { overflow-x:auto; border-radius:4px; box-shadow:0 1px 4px rgba(39,35,92,0.1); }
+.ah-table { width:100%; border-collapse:collapse; background:white; min-width:750px; }
+.ah-table th { background:#27235c; color:white; padding:10px 12px; text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; white-space:nowrap; }
+.ah-table td { padding:9px 12px; border-bottom:1px solid #ecedf4; font-size:13px; vertical-align:middle; }
+.ah-table tr:last-child td { border-bottom:none; }
+.ah-table tr:hover td { background:#f3f0f9; }
+.ah-sub { font-size:11px; color:#888; display:block; }
+.ah-pill { display:inline-block; padding:3px 10px; font-size:11px; font-weight:bold; border-radius:20px; white-space:nowrap; }
+.ah-pill-approved { background:#e8f5e9; color:#2e7d32; border:1px solid #a5d6a7; }
+.ah-pill-rejected { background:#ffebee; color:#c62828; border:1px solid #ef9a9a; }
+.mt-10 { margin-top:10px; }
+@media (max-width:600px) { .ah-filter-row { flex-direction:column; } .ah-filter-group { min-width:100%; } }

@@ -1,0 +1,61 @@
+version: '3.9'
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE:      workflow_db   
+      MYSQL_USER:          workflow_user
+      MYSQL_PASSWORD:      workflow_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - lats-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout:  5s
+      retries:  5
+  backend:
+    build:
+      context: ./workflow-approval
+      dockerfile: Dockerfile
+    container_name: workflow-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      # ✅ "db" = MySQL container name — not localhost
+      SPRING_DATASOURCE_URL:         jdbc:mysql://db:3306/dailytask_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME:    workflow_user
+      SPRING_DATASOURCE_PASSWORD:    workflow_pass
+      JWT_SECRET:                    OWVlNGM4ZTQtNTA2ZS00YzM4LWJlNzItYzg2YzZhZjBjOGI4YTQ1NGQtNTM0ZC00
+      JWT_EXPIRATION:                86400000
+      MAIL_USERNAME:                 snehaveerakumar2004@gmail.com
+      MAIL_PASSWORD:                 dkyvjmenlqaabzda
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - lats-network
+  frontend:
+    build:
+      context: ./workflow-simple
+      dockerfile: Dockerfile
+    container_name: workflow-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - lats-network
+volumes:
+  mysql_data:
+networks:
+  lats-network:
+    driver: bridge

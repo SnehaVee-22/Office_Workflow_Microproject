@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #ecedf4;
+  color: #222;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+.mt-10 { margin-top: 10px; }
+.mb-10 { margin-bottom: 10px; }
+.text-muted { color: #999; font-size: 12px; }
+.error-msg  { color: #c62828; font-size: 12px; margin-top: 4px; }
+
+.btn {
+  display: inline-block;
+  padding: 7px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  font-family: Arial, sans-serif;
+  border-radius: 3px;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  transition: opacity 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.btn-primary   { background: #27235c; color: white; }
+.btn-purple    { background: #97247e; color: white; }
+.btn-success   { background: #2e7d32; color: white; }
+.btn-danger    { background: #c62828; color: white; }
+.btn-warning   { background: #e65100; color: white; }
+.btn-secondary { background: #5a5a5a; color: white; }
+
+@media (max-width: 768px) {
+  .container { padding: 0 10px; margin: 12px auto; }
+}
+@media (max-width: 480px) {
+  .container { padding: 0 8px; }
+  .btn { padding: 6px 11px; font-size: 12px; }
+}

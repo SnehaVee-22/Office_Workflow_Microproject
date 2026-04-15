@@ -1,0 +1,22 @@
+.pr-title { font-size:17px; font-weight:bold; color:#27235c; margin-bottom:16px; padding:10px 14px; background:white; border-left:5px solid #97247e; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(39,35,92,0.08); }
+.pr-alert { padding:9px 12px; margin:10px 0; font-size:13px; border-left:4px solid #27235c; background:#ede7f6; color:#27235c; border-radius:0 3px 3px 0; }
+.pr-empty { background:white; border-radius:4px; border-top:3px solid #27235c; padding:28px 18px; text-align:center; color:#888; font-size:14px; box-shadow:0 1px 4px rgba(39,35,92,0.08); }
+.pr-table-wrap { overflow-x:auto; border-radius:4px; box-shadow:0 1px 4px rgba(39,35,92,0.1); }
+.pr-table { width:100%; border-collapse:collapse; background:white; min-width:750px; }
+.pr-table th { background:#27235c; color:white; padding:10px 12px; text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; white-space:nowrap; }
+.pr-table td { padding:9px 12px; border-bottom:1px solid #ecedf4; font-size:13px; vertical-align:middle; }
+.pr-table tr:last-child td { border-bottom:none; }
+.pr-table tr:hover td { background:#f3f0f9; }
+.pr-sub { font-size:11px; color:#888; display:block; }
+.pr-modal-overlay { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(39,35,92,0.6); display:flex; align-items:center; justify-content:center; z-index:999; padding:16px; backdrop-filter:blur(2px); }
+.pr-modal-box { background:white; border-radius:6px; border-top:4px solid #97247e; padding:22px 24px; width:100%; max-width:480px; max-height:90vh; overflow-y:auto; box-shadow:0 8px 32px rgba(39,35,92,0.25); }
+.pr-modal-box h3 { font-size:15px; color:#27235c; margin-bottom:10px; padding-bottom:10px; border-bottom:2px solid #ecedf4; }
+.pr-modal-close { float:right; background:#ecedf4; border:none; font-size:14px; cursor:pointer; color:#555; width:26px; height:26px; border-radius:50%; line-height:26px; text-align:center; margin-top:-2px; transition:background 0.2s,color 0.2s; }
+.pr-modal-close:hover { background:#97247e; color:white; }
+.pr-modal-info { font-size:13px; margin-bottom:14px; padding:8px 10px; background:#f3f0f9; border-radius:3px; color:#444; }
+.pr-form-group { margin-bottom:12px; }
+.pr-form-group label { display:block; margin-bottom:5px; font-size:11px; font-weight:bold; color:#27235c; text-transform:uppercase; letter-spacing:0.4px; }
+.pr-form-group textarea { width:100%; padding:8px 10px; border:1px solid #ccc; border-radius:3px; font-size:13px; font-family:Arial,sans-serif; outline:none; height:80px; resize:vertical; background:#fafafa; transition:border-color 0.2s; }
+.pr-form-group textarea:focus { border-color:#27235c; background:white; }
+.error-msg { color:#c62828; font-size:12px; margin-top:4px; }
+@media (max-width:480px) { .pr-modal-box { padding:16px 14px; } }

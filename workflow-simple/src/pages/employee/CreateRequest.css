@@ -1,0 +1,16 @@
+.cr-title { font-size:17px; font-weight:bold; color:#27235c; margin-bottom:16px; padding:10px 14px; background:white; border-left:5px solid #97247e; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(39,35,92,0.08); }
+.cr-card { background:white; border-radius:4px; border-top:3px solid #27235c; padding:20px 22px; margin-top:12px; box-shadow:0 1px 4px rgba(39,35,92,0.08); max-width:680px; }
+.cr-alert { padding:9px 12px; margin-bottom:14px; font-size:13px; border-left:4px solid #c62828; background:#ffebee; color:#b71c1c; border-radius:0 3px 3px 0; }
+.cr-group { margin-bottom:13px; }
+.cr-group label { display:block; margin-bottom:5px; font-size:11px; font-weight:bold; color:#27235c; text-transform:uppercase; letter-spacing:0.5px; }
+.cr-group input,
+.cr-group select,
+.cr-group textarea { width:100%; padding:8px 10px; border:1px solid #ccc; border-radius:3px; font-size:13px; font-family:Arial,sans-serif; outline:none; background:#fafafa; transition:border-color 0.2s,box-shadow 0.2s; }
+.cr-group input:focus,
+.cr-group select:focus,
+.cr-group textarea:focus { border-color:#27235c; box-shadow:0 0 0 2px rgba(39,35,92,0.1); background:white; }
+.cr-group textarea { height:80px; resize:vertical; }
+.cr-section-label { font-size:11px; font-weight:bold; color:#97247e; text-transform:uppercase; letter-spacing:0.6px; margin-bottom:10px; padding-bottom:5px; border-bottom:2px solid #f3e5f5; }
+.cr-leave-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.cr-note { background:#ede7f6; border-left:3px solid #27235c; padding:8px 12px; font-size:12px; color:#27235c; border-radius:0 3px 3px 0; margin-bottom:14px; }
+@media (max-width:480px) { .cr-leave-grid { grid-template-columns:1fr; } .cr-card { padding:16px 14px; } }
